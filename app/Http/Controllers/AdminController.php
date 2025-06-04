@@ -42,11 +42,17 @@ class AdminController extends Controller
 
     public function order(Request $request)
     {
-        $orders = Order::with(['orderItems.beverage', 'user'])->orderBy('created_at', 'desc')->paginate(5);
+        $query = Order::with(['orderItems.beverage', 'user'])->orderBy('created_at', 'desc');
 
+        if ($request->has('status') && in_array($request->status, ['paid', 'pending', 'canceled', 'expired'])) {
+            $query->where('status', $request->status);
+        }
+
+        $orders = $query->paginate(5);
 
         return view('admin.order', compact('orders'));
     }
+
 
     public function orderDetail($id)
     {

@@ -46,6 +46,28 @@
     <!-- Orders List -->
     <div class="bg-white rounded-3 p-4 shadow-sm">
         @if($orders->count() > 0)
+            <form method="GET" class="mb-4">
+                <div class="row g-2 align-items-end">
+                    <div class="col-md-4">
+                        <label for="status" class="form-label fw-bold">Filter by Status</label>
+                        <select name="status" id="status" class="form-select">
+                            <option value="">-- All Statuses --</option>
+                            <option value="paid" {{ request('status') == 'paid' ? 'selected' : '' }}>Paid</option>
+                            <option value="canceled" {{ request('status') == 'canceled' ? 'selected' : '' }}>Canceled</option>
+                            <option value="pending" {{ request('status') == 'pending' ? 'selected' : '' }}>Pending</option>
+                            <option value="expired" {{ request('status') == 'expired' ? 'selected' : '' }}>Expired</option>
+                        </select>
+                    </div>
+                    <div class="col-md-auto">
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-filter me-1"></i>Apply Filter</button>
+                    </div>
+                    @if(request('status'))
+                    <div class="col-md-auto">
+                        <a href="{{ route('admin.order') }}" class="btn btn-outline-secondary"><i class="fas fa-times me-1"></i>Reset</a>
+                    </div>
+                    @endif
+                </div>
+            </form>
         @foreach($orders as $order)
         <!-- Order Item -->
         <div class="border-bottom pb-3 mb-3">
