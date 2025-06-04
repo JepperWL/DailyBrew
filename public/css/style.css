@@ -1,0 +1,213 @@
+/* Font Declarations */
+@font-face {
+  font-family: 'Glacial Indifference';
+  src: url('../fonts/GlacialIndifference-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Glacial Indifference';
+  src: url('../fonts/GlacialIndifference-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+.dm-serif-display-regular {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dm-serif-display-regular-italic {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+/* Override Bootstrap Variables */
+:root {
+  /* Color Palette */
+  --bs-primary: #295943;
+  --bs-primary-rgb: 41, 89, 67;
+  --bs-body-color: #000000;
+  
+  /* Custom Project Colors */
+  --coffee-lightest: #FBF9F6;
+  --coffee-light: #EBE2CF;
+  --coffee-medium: #E3C790;
+  --coffee-dark: #295943;
+  
+  /* Font Family */
+  --bs-font-sans-serif: 'Glacial Indifference', sans-serif;
+  --bs-body-font-family: var(--bs-font-sans-serif);
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.btn-primary:hover {
+  background-color: #1e4332;
+  border-color: #1e4332;
+}
+
+/* Custom Utility Classes */
+.bg-coffee-lightest {
+  background-color: var(--coffee-lightest);
+}
+
+.bg-coffee-light {
+  background-color: var(--coffee-light);
+}
+
+.bg-coffee-medium {
+  background-color: var(--coffee-medium);
+}
+
+.bg-coffee-dark {
+  background-color: var(--coffee-dark);
+}
+
+
+
+/* Make form controls match the background color */
+.form-control {
+  background-color: var(--coffee-light);
+  border: 1px solid #000;
+}
+
+.form-control:focus {
+  background-color: var(--coffee-light);
+  box-shadow: 0 0 0 0.25rem rgba(41, 89, 67, 0.25);
+}
+
+/* Add a little styling for placeholder text */
+.form-control::placeholder {
+  color: #666;
+  opacity: 0.7;
+}
+
+.card-rounded {
+  border-radius: 50px !important;
+}
+
+/* If you want the inner content to have the same rounded corners */
+.card-rounded .card-body {
+  border-radius: 14px;
+}
+
+.rounded-bottom-lg {
+  border-bottom-left-radius: 5rem !important;
+  border-bottom-right-radius: 5rem !important;
+}
+
+/* Card hover and click animations */
+.card-hover-animation {
+  transition: all 0.3s ease;
+}
+
+.card-hover-animation:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-hover-animation.active {
+  transform: scale(0.98);
+  background-color: #e5dcc8 !important; /* Slightly darker than coffee-lightest */
+}
+
+.bg-dark-green {
+    background-color: #3e5949;
+}
+
+input.form-control {
+    border-radius: 8px 0 0 8px;
+    border: none;
+}
+
+.input-group-text {
+    border-radius: 0 8px 8px 0;
+    border: none;
+}
+
+.input-group input:focus,
+.input-group .input-group-text:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+a.text-white:hover {
+    color: #ddd !important;
+}
+
+/* Container animasi */
+.slide-search-form {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    max-width: 0;
+    overflow: hidden;
+    transition: max-width 0.5s ease;
+}
+
+/* Saat aktif */
+.slide-search-form.active {
+    max-width: 250px;
+}
+
+
+.slide-section {
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    max-height: 0;
+}
+
+.slide-section.show {
+    max-height: 500px;
+}
+
+.bg-deep-green {
+    background-color: #1f3b2c !important;
+}
+
+.text-coffee-gold {
+    color: #e3c790 !important;
+}
+
+.border-round {
+    border-radius: 1rem;
+}
+
+.btn-coffee {
+    background-color: #355c47;
+    color: white;
+    font-weight: bold;
+    border-radius: 2rem;
+}
+
+.btn-coffee:hover {
+    background-color: #2e4e3e;
+}
+.form-wrapper {
+    border: 2px solid white;
+    border-radius: 1rem;
+    padding: 2rem;
+    background-color: #1f3b2c;
+    color: #e3c790;
+}
+
+
+
+.bg-cream {
+  background-color: #eae1ce;
+}
+
+.table-cream {
+    background-color: #eae1ce;
+    color: #212529; /* dark text */
+}
