@@ -12,8 +12,9 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\WishlistController;
 
+
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/user/login');
 });
 
 Route::middleware(['user.auth'])->group(function () {
@@ -66,10 +67,6 @@ Route::middleware('guest')->group(function () {
     Route::get('/user/update-password', [LoginController::class, 'showUpdatePasswordForm'])->name('user.update-password');
     Route::post('/user/update-password', [LoginController::class, 'updatePassword'])->name('user.update-password.submit');
 
-});
-
-Route::get('/', function () {
-    return view('welcome');
 });
 
 
